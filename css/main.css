@@ -10,7 +10,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 40px 0 60px;
+  padding: 2vmin;
   background:
     radial-gradient(circle at top,#dfefff,#8fb7ff 55%,#3c4b72);
   font-family: "DM Mono", sans-serif;
@@ -42,8 +42,13 @@ p {
 
 #markers{
   display:grid;
-  grid-template-columns:repeat(7,10vmin);
-  gap:2.8vmin;
+  width:min(90vw,85vh);
+
+  display:grid;
+
+  grid-template-columns:repeat(7,1fr);
+
+  gap:1vmin;  gap:2.8vmin;
   margin-bottom:1vmin;
   
 }
@@ -77,9 +82,16 @@ p {
 #board{
   padding:22px;
   display:grid;
-  grid-template-columns:repeat(7,10vmin);
-  grid-template-rows:repeat(6,10vmin);
-  gap:2.5vmin;
+   width:min(90vw,85vh);
+
+    aspect-ratio:7 / 6;
+
+    display:grid;
+
+    grid-template-columns:repeat(7,1fr);
+
+    grid-template-rows:repeat(6,1fr);
+  gap:1vmin;
   border-radius:24px;
   background:
     linear-gradient(
@@ -99,8 +111,8 @@ p {
   position: relative;
   overflow: hidden;   /* keeps sparks inside the circle */
 
-  width: 80px;
-  height: 80px;
+ width:100%;
+    height:100%;
   border-radius: 50%;
 
   background:
