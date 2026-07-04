@@ -1,0 +1,250 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  /* viewport units: vh (viewport height) vw (viewport width), vmin (smallest*/
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0 60px;
+  background:
+    radial-gradient(circle at top,#dfefff,#8fb7ff 55%,#3c4b72);
+  font-family: "DM Mono", sans-serif;
+   margin-bottom: 1vmin;
+   overflow-x: auto;
+}
+
+header{
+  font-size:4vmin;
+  letter-spacing: 1vmin;
+  color:#000000;
+  font-weight: 500;
+ 
+  text-shadow:
+    0 3px 8px rgba(0,0,0,.35);
+}
+
+h1{
+  color:white;
+  margin:.75rem;
+  text-shadow:0 2px 4px black;
+  font-size: 3vmin;
+  letter-spacing: 1vmin;
+}
+
+p {
+   margin-top:1vmin;
+}
+
+#markers{
+  display:grid;
+  grid-template-columns:repeat(7,10vmin);
+  gap:2.8vmin;
+  margin-bottom:1vmin;
+  
+}
+
+#markers > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vmin;
+ 
+  font-size: 2.5rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+#markers > div:hover {
+  transform: translateY(6px) scale(1.2);
+  cursor: pointer;
+}
+
+@keyframes bounce {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(8px); }
+  100% { transform: translateY(0); }
+}
+
+#markers > div:hover {
+  animation: bounce 0.5s ease infinite;
+}
+
+#board{
+  padding:22px;
+  display:grid;
+  grid-template-columns:repeat(7,10vmin);
+  grid-template-rows:repeat(6,10vmin);
+  gap:2.5vmin;
+  border-radius:24px;
+  background:
+    linear-gradient(
+      145deg,
+      #686868,
+      #171717 55%,
+      #000000
+    );
+
+  box-shadow:
+    inset -8px -8px 14px rgba(0,0,0,.35),
+    inset 8px 8px 14px rgba(255,255,255,.25),
+    0 18px 35px rgba(0,0,0,.45);
+}
+
+#board div {
+  position: relative;
+  overflow: hidden;   /* keeps sparks inside the circle */
+
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at 35% 30%,
+      #efefef,
+      #d8d8d8 55%,
+      #9f9f9f 100%
+    );
+
+  box-shadow:
+      inset 0 8px 10px rgba(255,255,255,.6),
+      inset 0 -10px 15px rgba(0,0,0,.45),
+      0 2px 3px rgba(0,0,0,.25);
+
+      
+}
+
+.particle{
+    position:absolute;
+    width:3px;
+    height:3px;
+    border-radius:50%;
+    background:radial-gradient(circle, white 0%, #fff8cc 70%, transparent 100%);
+    pointer-events:none;
+
+    left:50%;
+    top:50%;
+
+    transform:translate(-50%,-50%);
+}
+
+button{
+
+  margin-top:4vmin;
+  padding:2vmin 4vmin;
+  border:none;
+  border-radius:4vmin;
+  font-size:2vmin;
+  font-weight:bold;
+  background:linear-gradient(#ffffff,#d9d9d9);
+  box-shadow:
+      0 5px 12px rgba(0,0,0,.35);
+  cursor:pointer;
+  transition:.2s;
+}
+
+button:hover{
+  transform:translateY(-3px);
+  box-shadow:
+      0 10px 18px rgba(0,0,0,.45);
+      cursor: pointer;
+}
+
+#celebration{
+    position:fixed;
+    inset:0;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:rgba(0,0,0,.85);
+
+    opacity:0;
+    pointer-events:none;
+
+    transition:.5s;
+}
+
+#celebration.show{
+    opacity:1;
+    pointer-events:all;
+}
+
+.message{
+    text-align:center;
+
+    color:white;
+
+    max-width:700px;
+
+    padding:40px;
+
+    border-radius:20px;
+
+    background:rgba(20,20,20,.9);
+
+    box-shadow:0 0 40px rgba(255,255,255,.2);
+}
+
+#winner-text{
+    font-size:3rem;
+    margin-bottom:20px;
+}
+
+.message p{
+    font-size:1.2rem;
+    line-height:1.6;
+}
+
+.spark {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: white;
+
+    transform: translate(-50%, -50%);
+    animation: chipFirework .55s ease-out forwards;
+}
+
+@keyframes chipFirework {
+
+    0%{
+        transform:translate(-50%,-50%) scale(.1);
+        opacity:1;
+
+        box-shadow:
+        0 0 white,
+        0 0 white,
+        0 0 white,
+        0 0 white,
+        0 0 white,
+        0 0 white,
+        0 0 white,
+        0 0 white;
+    }
+
+    100%{
+
+        transform:translate(-50%,-50%) scale(1);
+        opacity:0;
+
+        box-shadow:
+         0 -22px white,
+         16px -16px white,
+         22px 0 white,
+         16px 16px white,
+         0 22px white,
+        -16px 16px white,
+        -22px 0 white,
+        -16px -16px white;
+    }
+}
