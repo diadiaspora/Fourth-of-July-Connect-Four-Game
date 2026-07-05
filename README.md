@@ -7,7 +7,7 @@ A browser-based implementation of the classic Connect Four game built using HTML
 ## 🌐 Live Demo
 
 Play the game here:  
-(Play the game here)[(https://diadiaspora.github.io/Fourth-of-July-Connect-Four-Game/?)]
+(https://diadiaspora.github.io/Fourth-of-July-Connect-Four-Game/?)
 
 ---
 
