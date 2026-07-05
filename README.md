@@ -96,3 +96,21 @@ This version includes a themed visual redesign inspired by **Fourth of July cele
 ---
 
 ## 📂 Project Structure
+---
+connect-four/
+│
+├── index.html # Main HTML file
+├── style.css # Game styling and animations
+├── app.js # Game logic and DOM manipulation
+└── assets/ # Images, icons, or screenshots (optional)
+
+## 🧠 What I Learned
+
+- How to manipulate the DOM dynamically
+- How to structure game logic in JavaScript
+- How to track game state efficiently
+- How to implement win-condition algorithms
+- How to enhance UI/UX using CSS animations
+
+---
+
