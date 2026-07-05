@@ -57,11 +57,6 @@ A browser-based implementation of the classic Connect Four game built using HTML
 Play the game here:  
 [Insert your GitHub Pages / deployment link]
 
----
-
-## 📸 Preview
-
-![Connect Four Screenshot](insert-screenshot-link-or-path-here)
 
 ---
 
